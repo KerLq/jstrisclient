@@ -30,7 +30,7 @@ namespace Jstris_Client
             settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\CEF";
             Cef.Initialize(settings);
             browser = new ChromiumWebBrowser("https://jstris.jezevec10.com");
-            browser.KeyboardHandler = new KeyboardHandler();
+            //browser.KeyboardHandler = new KeyboardHandler();
             this.Controls.Add(browser);
             browser.Dock = DockStyle.Fill;
 
@@ -46,7 +46,13 @@ namespace Jstris_Client
     }
 
 
-    //KeyboardHandler by tobre => https://stackoverflow.com/questions/60740328/keyboard-shortcut-does-not-make-it-to-cefsharp-browser-control
+    /* 
+        KeyboardHandler by tobre => https://stackoverflow.com/questions/60740328/keyboard-shortcut-does-not-make-it-to-cefsharp-browser-control
+
+        This will allow ALT+F4
+
+        Current State: Its scuffed and won't be featured. I'll work on it soon
+    */
     public class KeyboardHandler : IKeyboardHandler
     {
         private bool _cefAltKeyPressed;
